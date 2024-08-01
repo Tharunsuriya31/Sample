@@ -1,0 +1,67 @@
+﻿@{
+    ViewData["Title"] = "SGS";
+}
+
+@model IEnumerable<Sample.Models.Register>
+<div class="d-grid gap-2 d-md-flex justify-content-md-end">
+    <a asp-controller="Mpit" asp-action="Register" class="btn btn-info" type="button">CREATE</a>
+</div>
+
+<table class="table">
+    <thead>
+        <tr>
+            <th scope="col">S.no</th>
+            <th scope="col">Email</th>
+            <th scope="col">Password</th>
+            <th scope="col">Mobile No</th>
+            <th scope="col">ID Number</th>
+            <th scope="col">Permanent Address</th>
+            <th scope="col">Temporary Address</th>
+            <th scope="col">State</th>
+            <th scope="col">District</th>
+            <th scope="col">Zip</th>
+            <th scope="col">Role</th>
+            <th scope="col">Date and Time</th>
+            <th scope="col">Actions</th>
+        </tr>
+    </thead>
+    <tbody>
+        @if (Model != null)
+        {
+            @foreach (var user in Model)
+            {
+                @* if (user.Email == "	arun@gmail.com") *@
+                {
+                    <tr>
+                        <td>@user.Id</td>
+                        <td>@user.Email</td>
+                        <td>@user.Password</td>
+                        <td>@user.MobileNo</td>
+                        <td>@user.IDNumber</td>
+                        <td>@user.PermanentAddress</td>
+                        <td>@user.TemporaryAddress</td>
+                        <td>@user.State</td>
+                        <td>@user.District</td>
+                        <td>@user.Zip</td>
+                        <td>@user.EorV</td>
+                        <td>@user.RegistrationDate</td>
+
+                        <td><a asp-action="Edit" asp-route-id="@user.Id" class="btn btn-warning">EDIT</a></td>
+                        <td>
+                            <form asp-action="Delete" asp-route-id="@user.Id" method="post" style="display:inline;">
+                                <button type="submit" class="btn btn-danger">DELETE</button>
+                            </form>
+                        </td>
+                    </tr>
+                }
+               
+            }
+        }
+        else
+        {
+            <tr>
+                <td colspan="13" class="text-center">No users found</td>
+            </tr>
+        }
+    </tbody>
+</table>

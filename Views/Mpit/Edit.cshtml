@@ -1,0 +1,129 @@
+﻿@model Sample.Models.Register
+
+@{
+    ViewData["Title"] = "Edit";
+}
+
+<h1>EDIT MPITREGISTER</h1>
+
+<h4>Employee</h4>
+<hr />
+<div class="row">
+    <div class="col-md-4">
+        <form asp-action="Edit">
+            <div asp-validation-summary="ModelOnly" class="text-danger"></div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <label asp-for="Email" class="control-label"></label>
+                <input asp-for="Email" class="form-control" />
+                <span asp-validation-for="Email" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Password" class="control-label"></label>
+                <input asp-for="Password" class="form-control" />
+                <span asp-validation-for="Password" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="MobileNo" class="control-label"></label>
+                <input asp-for="MobileNo" class="form-control" />
+                <span asp-validation-for="MobileNo" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="IDNumber" class="control-label"></label>
+                <input asp-for="IDNumber" class="form-control" />
+                <span asp-validation-for="IDNumber" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="PermanentAddress" class="control-label"></label>
+                <input asp-for="PermanentAddress" class="form-control" />
+                <span asp-validation-for="PermanentAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="TemporaryAddress" class="control-label"></label>
+                <input asp-for="TemporaryAddress" class="form-control" />
+                <span asp-validation-for="TemporaryAddress" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="State" class="control-label"></label>
+                <select id="inputState" class="form-select" asp-for="State">
+                    <option selected>Choose...</option>
+                    <option>TamilNadu</option>
+                </select>
+                <span asp-validation-for="State" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="District" class="control-label"></label>
+                <select id="inputState" class="form-select" asp-for="District">
+                    <option selected>Choose...</option>
+                    <option>Ariyalur</option>
+                    <option>Chengalpattu</option>
+                    <option>Chennai</option>
+                    <option>Coimbatore</option>
+                    <option>Cuddalore</option>
+                    <option>Dharmapuri</option>
+                    <option>Dindigul</option>
+                    <option>Erode</option>
+                    <option>Kallakurichi</option>
+                    <option>Kanchipuram</option>
+                    <option>Kanyakumari</option>
+                    <option>Karur</option>
+                    <option>Krishnagiri</option>
+                    <option>Madurai</option>
+                    <option>Mayiladuthurai</option>
+                    <option>Nagapattinam</option>
+                    <option>Namakkal</option>
+                    <option>Nilgiris</option>
+                    <option>Perambalur</option>
+                    <option>Pudukkottai</option>
+                    <option>Ramanathapuram</option>
+                    <option>Ranipet</option>
+                    <option>Salem</option>
+                    <option>Sivaganga</option>
+                    <option>Tenkasi</option>
+                    <option>Thanjavur</option>
+                    <option>Theni</option>
+                    <option>Thiruvallur</option>
+                    <option>Thiruvarur</option>
+                    <option>Thoothukudi</option>
+                    <option>Tiruchirappalli</option>
+                    <option>Tirunelveli</option>
+                    <option>Tirupattur</option>
+                    <option>Tiruppur</option>
+                    <option>Tiruvannamalai</option>
+                    <option>Vellore</option>
+                    <option>Viluppuram</option>
+                    <option>Virudhunagar</option>
+                </select>
+                <span asp-validation-for="District" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="Zip" class="control-label"></label>
+                <input asp-for="Zip" class="form-control" />
+                <span asp-validation-for="Zip" class="text-danger"></span>
+            </div>
+            <div class="form-group">
+                <label asp-for="EorV" class="control-label"></label>
+                <select class="form-select" aria-label="Default select example" asp-for="EorV">
+                    <option selected>Open this select menu</option>
+                    <option value="Employeer">Employeer</option>
+                    <option value="Visitor">Visitor</option>
+                </select>
+                <span asp-validation-for="EorV" class="text-danger"></span>
+            </div>
+            <input type="hidden" asp-for="Id" />
+            <div class="form-group">
+                <input type="submit" value="Save" class="btn btn-success" />
+            </div>
+        </form>
+    </div>
+</div>
+
+<div>
+    <a asp-action="Mpitregister">Back to List</a>
+</div>
+
+@section Scripts {
+    @{
+        await Html.RenderPartialAsync("_ValidationScriptsPartial");
+    }
+}

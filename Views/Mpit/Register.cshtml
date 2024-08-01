@@ -1,0 +1,114 @@
+﻿@{
+    ViewData["Title"] = "REGISTER";
+}
+
+
+@model Sample.Models.Register
+
+<form class="row g-3" method="post">
+    <div class="col-md-6">
+        <label for="inputEmail4" class="form-label">Email :</label>
+        <input type="email" class="form-control" id="inputEmail4" asp-for="Email">
+    </div>
+
+    <div class="col-md-6">
+        <label for="inputPassword4" class="form-label">Password :</label>
+        <input type="password" class="form-control" id="inputPassword4" asp-for="Password">
+    </div>
+
+    <div class="col-6">
+        <label for="inputMobileno" class="form-label">Mobile NO :</label>
+        <input type="text" class="form-control" id="inputMobileno" asp-for="MobileNo">
+    </div>
+
+    <div class="col-6">
+        <label for="inputIdNumber" class="form-label">ID Number :</label>
+        <input type="text" class="form-control" id="inputIdNumber" asp-for="IDNumber">
+    </div>
+
+    <div class="col-12">
+        <label for="inputPermanentAddress" class="form-label">Permanent Address :</label>
+        <input type="text" class="form-control" id="inputPermanentAddress" placeholder="Apartment, studio, or floor" asp-for="PermanentAddress">
+    </div>
+
+    <div class="col-12">
+        <label for="inputTemporaryAddress" class="form-label">Temporary Address :</label>
+        <input type="text" class="form-control" id="inputTemporaryAddress" placeholder="Apartment, studio, or floor" asp-for="TemporaryAddress">
+    </div>
+
+    <div class="col-md-6">
+        <label for="inputState" class="form-label">State :</label>
+        <select id="inputState" class="form-select" asp-for="State">
+            <option selected>Choose...</option>
+            <option>TamilNadu</option>
+        </select>
+    </div>
+
+    <div class="col-md-4">
+        <label for="inputDistrict" class="form-label">District :</label>
+        <select id="inputDistrict" class="form-select" asp-for="District">
+            <option selected>Choose...</option>
+            <option>Ariyalur</option>
+            <option>Chengalpattu</option>
+            <option>Chennai</option>
+            <option>Coimbatore</option>
+            <option>Cuddalore</option>
+            <option>Dharmapuri</option>
+            <option>Dindigul</option>
+            <option>Erode</option>
+            <option>Kallakurichi</option>
+            <option>Kanchipuram</option>
+            <option>Kanyakumari</option>
+            <option>Karur</option>
+            <option>Krishnagiri</option>
+            <option>Madurai</option>
+            <option>Mayiladuthurai</option>
+            <option>Nagapattinam</option>
+            <option>Namakkal</option>
+            <option>Nilgiris</option>
+            <option>Perambalur</option>
+            <option>Pudukkottai</option>
+            <option>Ramanathapuram</option>
+            <option>Ranipet</option>
+            <option>Salem</option>
+            <option>Sivaganga</option>
+            <option>Tenkasi</option>
+            <option>Thanjavur</option>
+            <option>Theni</option>
+            <option>Thiruvallur</option>
+            <option>Thiruvarur</option>
+            <option>Thoothukudi</option>
+            <option>Tiruchirappalli</option>
+            <option>Tirunelveli</option>
+            <option>Tirupattur</option>
+            <option>Tiruppur</option>
+            <option>Tiruvannamalai</option>
+            <option>Vellore</option>
+            <option>Viluppuram</option>
+            <option>Virudhunagar</option>
+        </select>
+    </div>
+
+    <div class="col-md-2">
+        <label for="inputZip" class="form-label">Zip :</label>
+        <input type="text" class="form-control" id="inputZip" asp-for="Zip">
+    </div>
+
+    <div class="col-md-6">
+        <label for="inputEorV" class="form-label">Type :</label>
+        <select class="form-select" id="inputEorV" asp-for="EorV">
+            <option selected>Open this select menu</option>
+            <option value="Employeer">Employeer</option>
+            <option value="Visitor">Visitor</option>
+        </select>
+    </div>
+
+    <div class="col-md-6">
+        <label for="inputRegistrationDate" class="form-label">Date and Time :</label>
+        <input type="datetime-local" class="form-control" id="inputRegistrationDate" asp-for="RegistrationDate">
+    </div>
+
+    <div class="col-12 text-end">
+        <button type="submit" class="btn btn-success" asp-controller="Mpit" asp-action="Mpitregister">SUBMIT</button>
+    </div>
+</form>
